@@ -1,0 +1,72 @@
+<!-- Esta es un página web para la materia de Arquitectura de computadoras que contendrá todos las unidades
+    que se vieron en el curso
+    Autor: Jorge Alberto Babun Muñoz-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Arquitectura de Computadoras</title>
+        <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest">
+        <link rel="stylesheet" type="text/css" href="css/Style.css" media="screen">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Fira+Sans&family=Roboto&display=swap" rel="stylesheet">        
+        <script src="js/script.js" defer> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    </head>
+    <body class="indexBg">
+        <p class="websiteTitle" id="title">&emsp; </p>
+        <p class="description">La arquitectura de computadoras es el diseño conceptual y la estructura operacional fundamental de un sistema de computadoras. Es decir, es un modelo y una descripción funcional de los requerimientos y las implementaciones de diseño para varias partes de una computadora, 
+            con especial interés en la forma en que la unidad central de proceso (CPU) trabaja internamente y accede a las direcciones de memoria.  </p>
+        <div class="flex-container" id="flexUn">
+            <div class="unidad" onclick="location.href='html/unidad1.html'">
+                <p class="subtitle">
+                Unidad 1 <br>
+                <img src="media/gif/computer-computador.gif">
+            </div>
+            <div class="unidad" onclick="location.href='html/unidad2.html'">
+                <p class="subtitle">
+                Unidad 2 <br>
+                </p>
+                <img src="media/gif/neuromorphic-chip-market.gif" width="150vw">
+            </div>
+            <div class="unidad" onclick="location.href='html/unidad3.html'">
+                <p class="subtitle">
+                Unidad 3 <br> <br>
+                <img src="media/gif/ryzen-installing-lego.gif" width="150vw">
+                </p>
+            </div>
+            <div class="unidad" onclick="location.href='html/unidad4.html'">
+                <p class="subtitle">
+                Unidad 4 
+                </p>
+                <img src="media/gif/giphy.gif" width="150vw">
+            </div>
+        </div>
+        <div class="flex-container" id="flexUn">
+            <div class="unidad" onclick="location.href='html/practicas.html'">
+                <p class="subtitle">
+                Prácticas
+                </p>
+                <img src="media/gif/giphy2.gif" width="150vw">
+            </div>
+            <div class="unidad" onclick="location.href='html/diseñoEq.html'">
+                <p class="subtitle">
+                Diseño de Equipos
+                </p>
+                <img src="media/gif/retrowave-retro.gif" width="100vw">
+            </div>
+        </div>
+        <footer>
+            <div class="footer"> 
+                <p> Jorge Alberto Babun Muñoz</p>
+                <p> jorgealbertodeadname@gmail.com</p>
+                <img src="media/img/github.png" width="30vw" onclick="document.location.href='https://github.com/miubatwired'" style="cursor: pointer;">
+            </div>
+        </footer>
+    </body>
+</html>

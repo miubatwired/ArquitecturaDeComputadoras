@@ -1,0 +1,50 @@
+<!-- -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Unidad 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/Style.css" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preload" href="/media/img/Robo-Advisors2.jpg" as="image" fetchpriority="high">
+        <link rel="prefetch" href="/media/img/Robo-Advisors.jpg" as="image" fetchpriority="high">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+        <script src="../js/script.js" defer> </script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body class="contentBg">
+        <!-- Barra de navegación-->
+        <div class="topnav" id="myTopnav">
+            <a href="../index.html">Inicio</a>
+            <a href="../html/unidad1.html">Unidad 1</a>
+            <a href="../html/unidad2.html">Unidad 2</a>
+            <a href="../html/diseñoEq.html">Unidad 3</a>
+            <a href="../html/unidad4.html"> Unidad 4 </a>
+            <a href="../html/practicas.html"> Prácticas </a>
+            <a class="active"> Diseño de Equipos</a>
+            <a href="../html/about.html"> Acerca de</a>
+            <a href="javascript:void(0);" class="icon" onclick="changeTopnav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <!-- Div que separa el indice y el texto-->
+        <div class="navPracticas" id="practicasNav">
+            <a class="activePract" onclick="setPractica(4);"> Diseño de Equipo </a>
+            <a onclick="setPractica(5);">Cotización de equipo</a>
+        </div>
+        <div class="pdf"> 
+            <embed type="application/pdf" src=
+            "../pdf/Diseño de computadoras.pdf"
+            width="1080px"
+            height="630px" id="pdf">
+            </embed>
+        </div>
+    </body>
+</html>

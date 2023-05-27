@@ -1,0 +1,20 @@
+{
+    "lang": "es",
+    "name": "Arquitectura de Computadoras",
+    "short_name": "Arqui Comp",
+    "start_url": "/ArquitecturaDeComputadoras/",
+    "display": "standalone",
+    "scope": "/ArquitecturaDeComputadoras/",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

@@ -1,0 +1,236 @@
+<!-- -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Unidad 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/Style.css" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+        <script src="../js/script.js" defer> </script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body class="contentBg">
+        <!-- Barra de navegación-->
+        <div class="topnav" id="myTopnav">
+            <a href="../index.html">Inicio</a>
+            <a href="../html/unidad1.html">Unidad 1</a>
+            <a class="active">Unidad 2</a>
+            <a href="../html/unidad3.html">Unidad 3</a>
+            <a href="../html/unidad4.html"> Unidad 4 </a>
+            <a href="../html/practicas.html"> Prácticas </a>
+            <a href="../html/diseñoEq.html"> Diseño de Equipos</a>
+            <a href="../html/about.html"> Acerca de</a>
+            <a href="javascript:void(0);" class="icon" onclick="changeTopnav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <!-- Div que separa el indice y el texto-->
+        <div class="flex-TextContainer" id="flex">
+            <div class="contentIndex" id="contentIndex">
+                <div class="banner" id="banner"> 
+                    <button class="hide" type="button" onclick="hide()" id="hide">Ocultar</button>
+                    <p class="indexTitle" id="title"> Índice </p>
+                </div>
+                <div id="index">
+                    <ol>
+                        <li style="color:rgba(0, 0, 0, 0)">&nbsp;</li>
+                        <li> <a href="#arquicomp"> Estructura y funcionamiento de la CPU</a>
+                            <ol>
+                                <li><a href="#orgpro">Organización del procesador.</a></li>
+                                <li><a href="#esre">Estructura de registros.</a>
+                                    <ol>
+                                        <li><a href="#revi">Registros visibles para el usuario.</a></li>
+                                        <li><a href="#reco">Registros de control y de estados.</a></li>
+                                        <li><a href="#rere">Ejemplos de registros de CPU reales.</a></li>
+                                    </ol>
+                                    <li><a href="#cins">El ciclo de instrucción.</a>
+                                        <ol>
+                                            <li><a href="#fedex">Ciclo Fetch-Decode-Execute</a></li>
+                                            <li><a href="#segins">Segmentación de instrucciones</a></li>
+                                            <li><a href="#conjins">Conjunto de instrucciones: <br>Características y funciones</a></li>
+                                            <li><a href="#modir">Modos de direccionamiento y <br>formatos.</a></li>
+                                        </ol>
+                                    </li>
+                                    <li><a href="#cpureal">Casos de CPU reales</a></li>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="info" id="info">
+                <p class="title" id="arquicomp">Unidad 2: Estructura y Funcionamiento de la Unidad Central de Procesamiento</p>
+                <p class="title" id="orgpro"> 2.1 Organización del procesador.</p>
+                <ul>
+                    <li><b>Unidad de control: </b> Esta unidad se encarga de leer las instrucciones del programa y de decodificarlas para que puedan ser ejecutadas por el procesador.</li>
+                    <li><b>Unidad aritmético-lógica (ALU): </b> La ALU es la unidad encargada de realizar operaciones aritméticas (suma, resta, multiplicación, división) y lógicas (AND, OR, NOT) sobre los datos que se encuentran en la memoria.</li>
+                    <li><b>Registros: </b> Los registros son una pequeña cantidad de memoria de alta velocidad que se encuentran dentro del procesador. Sirven para almacenar temporalmente los datos y las instrucciones que se están procesando.</li>
+                    <li><b>Unidad de memoria caché:</b> La memoria caché es una memoria de acceso rápido que se encuentra en el procesador. Sirve para almacenar temporalmente los datos que se están utilizando con mayor frecuencia, con el objetivo de acelerar el acceso a los mismos.</li>
+                </ul>
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/Screenshot from 2023-05-17 14-32-06.png" alt="Gráfico de la unidad de control">
+                <ul>
+                    <li><b>Lógica secuencial:</b> Parte de la unidad de control encargada de controlar la secuencia de operaciones que se deben llevar a cabo para decodificar y ejecutar cada instrucción del programa. Por ejemplo, que después del Fetch sigue el Decode.</li>
+                    <li><b>Memoria de control:</b> Parte de la unidad de control que mantiene una tabla de instrucciones, con sus códigos de operación y datos necesarios para decodificar cada instrucción, así como direcciones de memoria de las siguientes instrucciones.</li>
+                    <li><b>Registros: </b>Almacenan datos temporales de decodificación y ejecución</li>
+                    <li><b>Decodificadores:</b> Circuitos lógicos que se utilizan para interpretar los códigos de operación (opcode) de cada instrucción y determinar la operación que se debe realizar y los operandos que se deben utilizar.</li>
+                </ul>
+                <p class="subtitle">Otras unidades</p>
+                <ul>
+                    <li><b>Unidad de paginación:</b> Traduce direcciones virtuales en direcciones físicas de memoria, tiene páginas (porciones de memoria) de tamaño fijo con tablas de direcciones virtuales y físicas.</li>
+                    <li><b>Unidad de prelocalización:</b> Sirve para mejorar el rendimiento de la unidad de paginación, almacena en caché las entradas de la tabla de páginas más utilizadas para reducir el tiempo de acceso a la memoria principal.</li>
+                    <li><b>Unidad de segmentación:</b> Funciona similar a la de paginación, pero en lugar de páginas fijas, segmenta lógicamente.</li>
+                    <li><b>Unidad de protección de memoria:</b> Unidad garantiza que los programas en
+                        ejecución no accedan a la memoria de manera no autorizada. En caso de que lo hagan se genera una excepción o interrupción. Ayuda a evitar fallos y programas maliciosos.</li>
+                </ul>
+                <p class="title" id="esre">2.2 Estructura de registros.</p>
+                <p class="subtitle" id="revi">2.2.1 Registros visibles para los usuarios.</p>
+                <p class="text">
+                    <b>¿Que es un registro?</b><br><br>
+                    Un registro es una memoria de alta velocidad y poca capacidad, integrada en el microprocesador, que permite guardar transitoriamente y acceder a valores muy usados, generalmente en operaciones matemáticas. <br><br>
+                    <b>¿Qué son los registros visibles del usuario?</b><br><br>
+                    Los registros visibles del usuario son un conjunto de registros que pueden ser accedidos directamente por los programas que se ejecutan en la CPU. Los registros visibles son una parte importante de la arquitectura de la CPU, ya que son utilizados por los programas para almacenar temporalmente datos que se están procesando.<br><br>
+                    Un registro visible para el usuario es aquél que puede referenciarse por medio del lenguaje máquina que la CPU ejecuta. Los registros visibles del usuario generalmente se encuentran en la unidad central de procesamiento (CPU) y se pueden dividir en dos categorías principales:
+                </p>
+                <ul>
+                    <li>Registros de propósito general: estos registros se utilizan para una amplia variedad de tareas y pueden ser accedidos directamente por los programas. Los registros de propósito general se utilizan para almacenar datos temporales, direcciones de memoria y otros valores importantes para el procesamiento de datos.</li>
+                    <li>Registros de control: estos registros se utilizan para controlar el flujo de ejecución de un programa. Los registros de control incluyen el contador de programa (program counter), que mantiene la dirección de memoria de la siguiente instrucción que debe ser ejecutada, y el registro de estado (status register), que almacena información sobre el estado de la CPU, como si se ha producido un error o si la última operación fue exitosa.</li>
+                </ul>
+                <p class="text">
+                    <b>Ejemplos</b>
+                </p>
+                <ul>
+                    <li>Registros generales: AX, AH, AL (Acumulador): a menudo conserva el resultado temporal después de una operación aritmética o lógica.</li>
+                    <li>Registros de apuntadores e índices:DI (Índice destino): Contiene el desplazamiento con respecto al segmento extra de un elemento de una cadena o arreglo.</li>
+                    <li>Registro de control: Registro de direcciones de memoria (MAR), el cual contiene la dirección en donde se efectuará la próxima lectura o escritura de datos. El número de direcciones depende del tamaño de la MAR.</li>
+                </ul>
+                <p class="subtitle" id="reco">2.2.2 Registros de control y estados.</p>
+                <p class="text">
+                    Los registros de control son utilizados por la unidad de control para controlar el funcionamiento de la CPU y por programas privilegiados del sistema para controlar la ejecución de programas.
+                </p>
+                <ul>
+                    <li>Regulan la ejecución de instrucciones</li>
+                    <li>Controla que no existen desfases entre operaciones del CPU</li>
+                    <li>Me permiten controlar estados</li>
+                </ul>
+                <p class="text">
+                    Dentro de estos registros se encuentran:
+                </p>
+                <ul>
+                    <li>El CP (Contador de programa): Contiene permanentemente la dirección de memoria de la siguiente instrucción a ejecutar. Al iniciar la ejecución de un programa toma la dirección de su primera instrucción. Incrementa su valor en uno, de forma automática, cada vez que se concluye una instrucción, salvo si la instrucción que se está ejecutando es de salto o de ruptura de secuencia, en cuyo caso el contador de programa tomará la dirección de la instrucción que se tenga que ejecutar a continuación.</li>
+                    <li>EL RI (Registro de Instrucción): Contiene la instrucción que se está ejecutando en cada momento. Esta instrucción llevará consigo el código de operación (CO) y en su caso los operandos o las direcciones de memoria de los mismos.</li>
+                </ul>
+                <p class="text">
+                    Estos registros se utilizan para la transferencia de datos entre la CPU y la memoria. Dentro de la CPU, los datos tienen que ofrecerse a la ALU para su procesamiento. La ALU puede tener acceso directo al de datos y a los registros visibles al usuario. Como alternativa, puede haber registros intermedios adicionales en el límite de la ALU; estos registros sirven como registros de entrada y salida de la ALU e intercambian datos con el de datos y los registros visibles al usuario.<br><br><br> <b>Registros de estado</b> <br><br>La información sobre el estado del procesador puede estar almacenada en un registro o en más de uno, aunque habitualmente suele ser un único registro denominado registro de estado.
+                </p>
+                <p class="text">
+                    Existe un registro especial, el registro de estado (FLAGS), en el que 9 de los 16 bits actúan como semáforos(indicadores del estado del procesador y del resultado de determinadas operaciones). <br><br>
+                    Estos bits son parcialmente visibles para el programador, en algunos casos mediante la ejecución de instrucciones específicas. Cada bit individual puede estar “activo” (1) o “inactivo”(1) y tiene un indicador que termina en F (“Flag”). Estos son los siguientes:
+                </p>
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/flags.png" alt="Registros flags">
+                <p class="subtitle" id="rere"> 2.2.3 Ejemplos de registros de CPU reales. </p>
+                <p class="subsubtitle">Motorola MC68000:</p>
+                <p class="text">
+                    Registros de 32 bits: 8 de datos y 9 de direccion
+                </p>
+                <ul>
+                    <li>Los de datos: También se usan como registros indice (un modo de direccionamiento),Permite operaciones con 8,16 y 32 bits segun determine el codigo de operacion.</li>
+                    <li>Los de direcciones A7 y A7 punteros de pila para usuarios y para SO respectivamente.</li>
+                    <li>Contador de programa de 32 bits y registro de estado de 16.</li>
+                </ul>
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/motomc.png" alt="Registros flags">
+                <p class="text">
+                    Diseño
+                </p>
+                <ul>
+                    <li>Repertorio especial de instrucciones regular sin registros de uso especial.</li>
+                    <li>Division en dos grupos,ahorro de 1 bit (compromiso razonable entre generalidad total y codigo mas compacto.</li>
+                </ul>
+                <p class="subsubtitle">Intel 8086</p>
+                <p class="text">
+                    Enfoque diferente de la organizacion de los registros cada registro tiene un uso particular aunque algunos pueden tener uso general. 4 registros de datos de 16 bits,direccionables tambien como bytes. <br><br>Registros de segmento uso dedicado e implicito,apuntan a los segmentos de datos,codigo y pila(base + desplazamiento). <br><br>Decisiones de diseño: codificacion compacta
+                    —-> Flexibilidad reducida
+                </p>
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/intel1.png" alt="Registros flags">
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/intel2.png" alt="Registros flags">
+                <p class="subsubtitle">Intel 80386</p>
+                <p class="text">
+                    Microprocesador de 32 bits diseñado como una ampliacion del 8086 16 bits. <br><br>
+                    Conserva la organizacion de registros original integrada en la nueva organizacion → proporciona compatibilidad ascendente para los programas de 8086<br><br>
+                    Limite de flexibilidad.
+                </p>
+                <img class="centeredPhotoWhite" src="../media/img/unidad2/intel3.png" alt="Registros flags">
+                <p class="title" id="cins">
+                    2.3 El ciclo de instrucción. 
+                </p>
+                <p class="subtitle" id="fedex">
+                    2.3.1 Ciclo Fetch-Decode-Execute
+                </p>
+                <p class="text">
+                    El encargado de ejecutar un programa en una computadora u otro sistema computacional es el CPU, lo realiza siguiendo el llamado ciclo Fetch Decode Execute, con este ciclo se ejecutan todas las tareas que una computadora puede realizar.<br>
+                    Este ciclo tiene algunas variantes y conforme ha avanzado el tiempo y la tecnología ha sufrido algunos cambios, pero el ciclo básico se conforma de las siguientes etapas:<br>
+                    <b>Traer la instrucción:</b> Se obtiene la instrucción desde memoria y se almacena en el registro del CPU para instrucciones.<br>
+                    <b>Decodificar la instrucción</b>: Se identifica el modo de direccionamiento de la instrucción y la ubicación de los datos a tratar, ya sea de<br>
+                    memoria, registro o instrucción directamente.<br>
+                    <b>Carga de Parámetros</b>: Se ejecuta la lectura, cargando todos los datos identificados en el paso anterior.<br>
+                    <b>Ejecutar</b>: Se ejecuta la instrucción ya configurada, realiza la tarea indicada, ya sea una suma, resta, almacenar información, extraer<br>
+                    información etc.<br>
+                    <b>Almacenar</b>: Se almacena el resultado obtenido de ejecutar la instrucción, por ejemplo, el resultado de una suma o un índice (Número)<br>
+                    como resultado de éxito de almacenar u obtener información de un archivo, entre otros.<br>
+                    <b>Actualizar PC</b>: Esta etapa es la de actualizar el registro PC (Program Counter) que contiene la siguiente dirección a ejecutar.<br>
+                    Evidentemente al ser un ciclo estas etapas se repiten constantemente durante el funcionamiento de la computadora.<br>
+                    Se debe considerar que el ciclo expuesto anteriormente es muy básico. Como se mencionaba hoy en día estos ciclos han tenido algunas alteraciones y optimizado de gran manera, como se sabe los sistemas de hoy en día son multitareas, lo cual conlleva a una alteración en este ciclo, además de las diferentes técnicas para reducir el tiempo de ejecución de instrucciones con temas de concurrencia y paralelismo en los procesadores modernos.<br>
+                    El ciclo expuesto nos muestra un poco la forma en la que las computadoras funcionan, todo el proceso que conlleva ejecutar una instrucción que puede parecer muy simple, además este ciclo básico permite darse una idea de cómo ha evolucionado los procesadores y las técnicas para reducir el tiempo de ejecución dado que los sistemas actuales ejecutan de forma simultánea muchas veces este ciclo, siendo este modificado y más eficiente.
+                </p>
+                <p class="subtitle" id="segins">
+                    2.3.2 Segmentación de instrucciones
+                </p>
+                <p class="text">
+                    La segmentación (en inglés pipelining, literalmente 'tubería' o 'cañería', o data pipeline) es un método por el cual se consigue aumentar el rendimiento de algunos sistemas electrónicos digitales. Se usa principalmente en los microprocesadores.<br>
+                    El nombre, por analogía, viene de que para impulsar el gas en un oleoducto a la máxima velocidad posible es necesario dividir el oleoducto en tramos y colocar una bomba que dé un<br>
+                    nuevo impulso al gas.<br>
+                    El símil con la programación existe en que los cálculos deben ser registrados o sincronizados con el reloj cada cierto tiempo para que la ruta crítica (tramo con más carga o retardo computacional entre dos registros de reloj) se reduzca.<br>
+                    La ruta crítica es en realidad la frecuencia máxima de trabajo alcanzada por el conjunto. A mayor ruta crítica (tiempo o retraso entre registros) menor es la frecuencia máxima de trabajo y a menor ruta crítica mayor frecuencia de trabajo. La una es la inversa de la otra. Repartir o segmentar equitativamente el cálculo hace que esa frecuencia sea la óptima a costa de más área para el almacenamiento o registro de los datos intervinientes y de un retraso o latencia (en ciclos de reloj/tiempo) en la salida del resultado equivalente al número de segmentaciones o registros realizados.<br>
+                    La ventaja primordial de este sistema es que, tal y como se muestra en la imagen, una vez el canal (pipe) está lleno, es decir, después de una latencia de cuatro en la imagen, los resultados de cada comando vienen uno tras otro cada flanco de reloj y sin latencia extra por estar encadenados dentro del mismo canal. <br>
+                    Todo esto habiendo maximizado la frecuencia máxima de trabajo.
+                </p>
+                <p class="subtitle" id="conjins">
+                    2.3.3 Conjunto de instrucciones: Características y funciones
+                </p>
+                <p class="text">
+                    Un conjunto de instrucciones o repertorio de instrucciones, juego de instrucciones o ISA (del inglés Instruction Set Architecture, Arquitectura del Conjunto de Instrucciones) es una especificación que detalla las instrucciones que una CPU de un ordenador puede entender y ejecutar, o el conjunto de todos los comandos implementados por un diseño particular de una CPU.<br>
+                    El término describe los aspectos del procesador generalmente visibles a un programador, incluyendo los tipos de datos nativos, las instrucciones, los registros, la arquitectura de memoria y las interrupciones, entre otros aspectos.<br>
+                    Existe principalmente de 3 tipos: CISC (Complex Instruction Set Computer), RISC (Reduced Instruction Set Computer) y SISC (Specific Instruction Set Computer).<br>
+                    La arquitectura del conjunto de instrucciones (ISA) se emplea a veces para distinguir este conjunto de características de la microarquitectura, que son los elementos y técnicas que se emplean para implementar el conjunto de instrucciones. Entre estos elementos se encuentras las microinstrucciones y los sistemas de caché.<br>
+                    Procesadores con diferentes diseños internos pueden compartir un conjunto de instrucciones; por ejemplo el Intel Pentium y AMD Athlon implementan versiones casi idénticas del conjunto de instrucciones x86, aunque tienen diseños internos completamente opuestos.
+                </p>
+                <p class="subtitle" id="modir">
+                    2.3.4 Modos de direccionamiento y formatos.
+                </p>
+                <p class="text">
+                    <b>Inmediato (Immediate)</b>: En este modo de direccionamiento, el valor del operando se especifica directamente en la instrucción. Por ejemplo, la instrucción ADD R1, #10 suma el valor inmediato 10 al contenido del registro R1.<br><br>
+                    <b>Directo (Direct)</b>: En este modo, la dirección de memoria del operando se especifica directamente en la instrucción. Por ejemplo, la instrucción LOAD R2, [100] carga el valor almacenado en la dirección de memoria 100 en el registro R2.<br><br>
+                    <b>Indirecto (Indirect)</b>: En este modo, la dirección de memoria del operando se obtiene indirectamente a través de un registro o puntero. Por ejemplo, la instrucción LOAD R3, [R2] carga el valor almacenado en la dirección de memoria apuntada por el contenido del registro R2 en el registro R3.<br><br>
+                    <b>Basado en Registro (Register-based)</b>: En este modo, la dirección de memoria del operando se calcula sumando un desplazamiento a un registro base. Por ejemplo, la instrucción LOAD R4, [R5+10] carga el valor almacenado en la dirección de memoria calculada sumando 10 al contenido del registro R5 en el registro R4.<br>
+                    <b>Indexado (Indexed)</b>: En este modo, la dirección de memoria del operando se calcula sumando un desplazamiento a un registro índice. Por ejemplo, la instrucción LOAD R6, [R7+R8] carga el valor almacenado en la dirección de memoria calculada sumando el contenido del registro R8 al contenido del registro R7 en el registro R6.<br><br>
+                    <b>Relativo (Relative)</b>: Este modo se utiliza en instrucciones de salto o branch. La dirección de salto se calcula sumando un desplazamiento relativo a la dirección de la siguiente instrucción. Por ejemplo, la instrucción JUMP [PC+20] realiza un salto a la dirección de memoria calculada sumando 20 al contenido del contador de programa (PC).
+                </p>
+                <p class="title" id="cpureal">
+                    2.4 Casos de CPU reales
+                </p>
+                <p class="text">
+                    <b>Intel Core i7-8700K:</b> Es una CPU de gama alta lanzada por Intel en 2017. Con 6 núcleos y 12 hilos de procesamiento, tiene una frecuencia base de 3.7 GHz y puede alcanzar hasta 4.7 GHz en modo Turbo. Es ampliamente utilizado en sistemas de juegos y estaciones de trabajo de alto rendimiento.<br><br>
+                    <b>AMD Ryzen 5 3600:</b> Esta CPU de la serie Ryzen de AMD se lanzó en 2019. Cuenta con 6 núcleos y 12 hilos, una frecuencia base de 3.6 GHz y una frecuencia máxima de 4.2 GHz. Es conocida por ofrecer un excelente rendimiento en relación calidad-precio y es popular entre los entusiastas de los juegos y los creadores de contenido.<br><br>
+                    <b>Qualcomm Snapdragon 888:</b> Es un procesador móvil de alto rendimiento lanzado por Qualcomm en 2020. Alimenta muchos teléfonos inteligentes Android de gama alta. Cuenta con una CPU octa-core que incluye núcleos de alto rendimiento basados en ARM Cortex-A78 y núcleos de eficiencia energética basados en ARM Cortex-A55. También integra un módem 5G y un procesador gráfico Adreno de última generación.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

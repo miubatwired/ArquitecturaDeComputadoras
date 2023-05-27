@@ -1,0 +1,523 @@
+/************************************************************/
+/*Este CSS le dará estilo a mi página web de Arquitectura de*/
+/*Computadoras                                              */
+/*Autor: Dana Babun Muñoz                                   */
+/************************************************************/
+
+* {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/*******************************************/
+/*Estilo del body para la página principal */
+/*******************************************/
+body.indexBg {
+  background: url("../media/img/Robo-Advisors2.jpg") no-repeat fixed;
+  background-size: 100vw;
+  color: white;
+  width: 100vw;
+  margin: 0;
+}
+
+/*************************************************/
+/*Estilo del body para las páginas del contenido */
+/*************************************************/
+body.contentBg {
+  background: url("../media/img/Robo-Advisors2.jpg") no-repeat fixed;
+  background-size: 100vw;
+  color: white;
+}
+
+body.aboutBg {
+  background: url("../media/img/peakpx.jpg") no-repeat fixed;
+  background-size: 100vw;
+  color: white;
+}
+
+/*************************************/
+/*Estilo del título de la página web */
+/*************************************/
+p.websiteTitle {
+  font-size: 50px;
+  text-align: center;
+  margin: 2vw;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+/******************************/
+/*Estilo del título del índice*/
+/******************************/
+p.indexTitle {
+  font-size: 15px;
+  text-align: center;
+  margin: 0.5vw;
+  font-weight: bold;
+}
+
+/**************************************/
+/*Estilo para los títulos y subtítulos*/
+/**************************************/
+p.title,
+p.subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*************************/
+/*Estilo para los títulos*/
+/*************************/
+p.title {
+  font-size: 37px;
+}
+
+/****************************/
+/*Estilo para los subtítulos*/
+/****************************/
+p.subtitle {
+  font-size: 27px;
+}
+
+/*******************************/
+/*Estilo para los subsubtítulos*/
+/*******************************/
+p.subsubtitle {
+  font-size: 22px;
+  margin-left: 2vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+/***********************/
+/*Estilo para el texto */
+/***********************/
+p.text {
+  font-size: 17px;
+  text-align: justify;
+  margin: 0 2vw 0;
+}
+
+/******************************************/
+/*Estilo para la descripción de la página */
+/******************************************/
+p.description {
+  margin: 3vw;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/*************************************/
+/*Div para cada unidad en index html */
+/*************************************/
+div.unidad, div.practicas {
+  display: block;
+  min-width: 15vw;
+  max-width: 15vw;
+  min-height: 15vw;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255);
+  transition: all .5s ease-in-out;
+}
+
+/*Añade pointer y le da animación cuando el usuario pone el pointer en el div */
+div.unidad:hover, div.practicas:hover {
+  cursor: pointer;
+  border-color: white;
+  transform: scale(1.2);
+}
+
+/***********************************/
+/*Flex container para las unidades,*/
+/*texto e imágenes                 */
+/***********************************/
+div.flex-container,
+div.flex-TextContainer,
+div.flex-images {
+  display: flex;
+  flex-direction: row;
+}
+
+div.flex-container {
+  justify-content: space-evenly;
+  margin: 0 2vw 2vw;
+}
+
+div.flex-TextContainer {
+  margin: 0 2vw 1vw;
+}
+
+div.flex-images {
+  justify-content: space-evenly;
+}
+
+div.info {
+  display: none;
+  margin-top: 1vw;
+  margin-bottom: 0;
+  max-height: 43vw;
+  min-width: 70%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border-radius: 10px;
+}
+
+div.about{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 38vh;
+  max-width: 35vw;
+  margin-left: 33vw;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+div.contentIndex {
+  display: none;
+  margin-top: 1vw;
+  margin-bottom: 0;
+  min-width: 27vw;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+div.banner {
+  text-align: center;
+  margin-top: 1vw;
+}
+
+div.footer{
+  margin-top: 17.9vh;
+  bottom: 0;
+  text-align: center;
+  text-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+div.pdf{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vh;
+}
+
+button.hide {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-color: #610D3C;
+  border-radius: 10px;
+}
+
+img.photo {
+  margin-bottom: 0.5vw;
+  width: 20vw;
+}
+
+img.centeredPhoto,
+img.centeredPhotoWhite {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  width: 30vw;
+}
+
+img.centeredPhotoWhite {
+  background-color: white;
+  padding: 0.5vw;
+}
+
+a {
+  color: #33B0FC;
+}
+
+b {
+  font-size: 19px;
+}
+
+ol.default {
+  margin: 2vw;
+}
+
+/****************************************/
+/* Responsividad de la página           */
+/****************************************/
+@media (max-width: 1100px) {
+
+  div.flex-container,
+  div.flex-TextContainer {
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  div.unidad {
+    max-width: 100vw;
+  }
+
+  div.footer{
+    margin-top: 10vh;
+  }
+
+  div.unidad:hover, div.practicas:hover {
+    transform: scale(1);
+  }
+
+  body.indexBg,
+  body.contentBg {
+    background: url("../media/img/Robo-Advisors.jpg") no-repeat fixed;
+    background-size: 100vw;
+    min-height: 100vw;
+    color: white;
+  }
+
+  div.info {
+    max-height: 90vw;
+  }
+
+  #flex{
+    max-height: 95%;
+    overflow-y: scroll;
+    overflow-y: visible;
+  }
+
+  button.hide {
+    display: inline-block;
+  }
+
+  img.photo,
+  img.centeredPhoto {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 600px) {
+
+  body.indexBg,
+  body.contentBg {
+    background: url("../media/img/Robo-Advisors.jpg") no-repeat fixed;
+    background-size: 220vw;
+    min-height: 100%;
+    color: white;
+  }
+  div.flex-TextContainer{
+    height: 89%;
+    position: fixed;
+  }
+  #index{
+    max-height: 91%;
+    overflow-y: scroll;
+  }
+  #contentIndex{
+    max-height: 100%;
+  }
+  #flex{
+    max-height: 95%;
+    overflow-y: scroll;
+    overflow-y: visible;
+  }
+  div.info {
+    max-height: 100%;
+    scroll-behavior: auto;
+  }
+
+  button.hide {
+    display: inline-block;
+  }
+
+  img.photo,
+  img.centeredPhoto {
+    width: 70vw;
+  }
+}
+
+/*************************************************************/
+/* Esta regla le da estilo a la barra de navegación (color) */
+/************************************************************/
+.topnav, .navPracticas, .topnav2 {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.topnav{
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(254, 119, 211);
+}
+
+.topnav2{
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #4140E4;
+}
+
+.navPracticas{
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.navPracticas {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.navPracticas a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.activePract{
+  color: #12B6FE;
+}
+
+/*************************************************************************/
+/* Esta regla le da estilo a los links adentro de la barra de navegación */
+/*************************************************************************/
+.topnav a, .topnav2 a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/*****************************************/
+/* Cambia el color de los links en hover */
+/*****************************************/
+.topnav a:hover{
+  background-color: white;
+  color: black;
+}
+
+.topnav2 a:hover{
+  background-color: white;
+  color: black;
+}
+
+.navPracticas a:hover {
+  color: #610D3C;
+}
+
+/************************************************************/
+/* Esta clase es para darle highlighting a la página actual */
+/* en la barra de navegación                                */
+/************************************************************/
+.topnav a.active {
+  background-color: #610D3C;
+  color: white;
+}
+
+.topnav2 a.active {
+  background-color: #4140E4;
+  color: white;
+}
+
+a.active {
+  cursor: default;
+}
+
+/***************************************/
+/* Esconde el ícono de hamburguer menu */
+/***************************************/
+.topnav .icon, .topnav2 .icon {
+  display: none;
+}
+
+/*****************************************************************************************************************/
+/* Cuando el ancho de la pantalla es menor de 600 pixeles, sólo muestra home y añade el icono de hamburguer menu */
+/*****************************************************************************************************************/
+@media screen and (max-width: 770px) {
+  .topnav a:not(:first-child), .topnav2 a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon, .topnav2 a.icon  {
+    float: right;
+    display: block;
+  }
+}
+
+/************************************************************************/
+/* Cambia la barra de navegación cuando el usuario le da click al icono */
+/************************************************************************/
+@media screen and (max-width: 770px) {
+  .topnav.responsive .topnav2.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive a.icon, .topnav2.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a, .topnav2.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/***************************************************************/
+/*Cambia el estilo de la lista ordenada para incluir subíndices*/
+/***************************************************************/
+ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol>li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol>li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+li ol>li {
+  margin: 0;
+}
+
+li ol>li:before {
+  content: counters(item, ".") " ";
+}
+
+/*********************/
+
+ul, ol.default, i{
+  font-size: 17px;
+}
+
+#alulabel{
+  margin: 0 20vw 0;
+}
